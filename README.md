@@ -9,7 +9,7 @@ Minecraft Texture Pack von moonyxk.
 Dieser Link zeigt immer automatisch auf das neueste Release.
 
 <!-- LATEST-RELEASE:START -->
-Aktuelle Version: **v1** – [moonyxk.Pack.zip](https://github.com/moonyxk/moonyxk-TP-Pack/releases/download/v1/moonyxk.Pack.zip)
+Aktuelle Version: **v2** – [moonyxk.Pack.zip](https://github.com/moonyxk/moonyxk-TP-Pack/releases/download/v2/moonyxk.Pack.zip)
 <!-- LATEST-RELEASE:END -->
 
 Alle Versionen: [Releases](https://github.com/moonyxk/moonyxk-TP-Pack/releases)
