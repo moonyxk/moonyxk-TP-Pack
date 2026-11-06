@@ -17,7 +17,7 @@ jobs:
 
       - name: Create zip
         run: |
-          zip -r "moonyxk Pack.zip" . -x ".git/*" ".github/*"
+          zip -r "moonyxk Pack.zip" . -x ".git/*" ".github/*" "README.md"
 
       - name: Create release
         env:
@@ -29,3 +29,25 @@ jobs:
             --target "$GITHUB_SHA" \
             --title "moonyxk Pack $TAG" \
             --notes "Automatischer Release für Commit $SHORT_SHA: $(git log -1 --pretty=%s)"
+
+      # Pushes made with GITHUB_TOKEN do not trigger this workflow again.
+      - name: Update README download link
+        run: |
+          TAG="v${{ github.run_number }}"
+          URL="https://github.com/${{ github.repository }}/releases/download/$TAG/moonyxk.Pack.zip"
+          LINE="Aktuelle Version: **$TAG** – [moonyxk.Pack.zip]($URL)"
+          awk -v line="$LINE" '
+            /<!-- LATEST-RELEASE:START -->/ { print; print line; skip=1; next }
+            /<!-- LATEST-RELEASE:END -->/ { skip=0 }
+            !skip
+          ' README.md > README.tmp && mv README.tmp README.md
+          if git diff --quiet README.md; then
+            echo "README already up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update README download link to $TAG [skip ci]"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
