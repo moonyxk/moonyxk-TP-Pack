@@ -1,0 +1,17 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "minecraft:item/wind_charge"
+	},
+	"overrides": [
+		{"predicate": {"cooldown": 0.1}, "model": "item/wind_charge1"},
+		{"predicate": {"cooldown": 0.2}, "model": "item/wind_charge2"},
+		{"predicate": {"cooldown": 0.3}, "model": "item/wind_charge3"},
+		{"predicate": {"cooldown": 0.4}, "model": "item/wind_charge4"},
+		{"predicate": {"cooldown": 0.5}, "model": "item/wind_charge5"},
+		{"predicate": {"cooldown": 0.6}, "model": "item/wind_charge6"},
+		{"predicate": {"cooldown": 0.7}, "model": "item/wind_charge7"},
+		{"predicate": {"cooldown": 0.8}, "model": "item/wind_charge8"},
+		{"predicate": {"cooldown": 0.9}, "model": "item/wind_charge9"}
+	]
+}
