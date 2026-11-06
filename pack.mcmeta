@@ -1,0 +1,12 @@
+{
+  "pack": {
+    "pack_format": 75,
+    "supported_formats": {
+      "min_inclusive": 18,
+      "max_inclusive": 90
+    },
+    "min_format": 18,
+    "max_format": 90,
+    "description": "lil tweak (twink)"
+  }
+}
